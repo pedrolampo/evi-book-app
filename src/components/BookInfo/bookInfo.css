@@ -1,0 +1,78 @@
+.book-header {
+  display: flex;
+  width: 100%;
+}
+
+.book-info {
+  display: flex;
+  gap: 2em;
+}
+
+.books-table {
+  border-style: solid;
+  border-spacing: 1em;
+}
+
+/* .book-date {
+  width: 3em;
+  background-color: red;
+}
+.book-title {
+  width: 3em;
+  background-color: red;
+}
+.book-author {
+  width: 3em;
+  background-color: red;
+}
+.book-genre {
+  width: 3em;
+  background-color: red;
+}
+.book-pages {
+  width: 3em;
+  background-color: red;
+}
+.book-rating {
+  width: 3em;
+  background-color: red;
+} */
+
+.rating-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.25em;
+  background-color: transparent;
+  border: 1px solid black;
+}
+.rating-dot:last-child {
+  margin-right: 0;
+}
+
+.book-rating.one :first-child {
+  background-color: black;
+}
+
+.book-rating.two :nth-child(1),
+.book-rating.two :nth-child(2) {
+  background-color: black;
+}
+
+.book-rating.three :nth-child(1),
+.book-rating.three :nth-child(2),
+.book-rating.three :nth-child(3) {
+  background-color: black;
+}
+
+.book-rating.four :nth-child(1),
+.book-rating.four :nth-child(2),
+.book-rating.four :nth-child(3),
+.book-rating.four :nth-child(4) {
+  background-color: black;
+}
+
+.book-rating.five > .rating-dot {
+  background-color: black;
+}
