@@ -9,8 +9,27 @@
 }
 
 .books-table {
-  border-style: solid;
-  border-spacing: 1em;
+  border-collapse: collapse;
+  width: 85%;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+}
+
+.books-table thead tr {
+  background-color: aquamarine;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+
+.books-table tbody {
+  background-color: rgba(211, 211, 211, 0.5);
+  border-bottom: 2px solid grey;
+}
+.books-table tbody tr {
+  border-bottom: 1px solid grey;
+}
+.books-table tbody tr:nth-child(2n) {
+  background-color: white;
 }
 
 /* .book-date {

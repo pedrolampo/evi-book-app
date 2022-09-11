@@ -4,3 +4,8 @@
   justify-content: center;
   align-items: center;
 }
+
+.header a {
+  color: black;
+  text-decoration: none;
+}
