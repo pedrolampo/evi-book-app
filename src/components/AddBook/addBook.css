@@ -30,6 +30,18 @@
   border-bottom: 1px solid grey;
   border-bottom-right-radius: 0.25em;
 }
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  font-style: italic;
+}
 .add-book-screen .form-section input:focus {
   outline: 1px solid grey;
   border-right: 1px solid grey;

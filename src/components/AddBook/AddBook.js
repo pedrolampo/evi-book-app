@@ -49,6 +49,31 @@ export default function AddBook() {
     }
   };
 
+  function handleDate(inputDate, format) {
+    //parse the input date
+    const date = new Date(inputDate);
+
+    //extract the parts of the date
+    const day = date.getDate() + 1;
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    //replace the month
+    format = format.replace('MM', month.toString().padStart(2, '0'));
+
+    //replace the year
+    if (format.indexOf('yyyy') > -1) {
+      format = format.replace('yyyy', year.toString());
+    } else if (format.indexOf('yy') > -1) {
+      format = format.replace('yy', year.toString().substr(2, 2));
+    }
+
+    //replace the day
+    format = format.replace('dd', day.toString().padStart(2, '0'));
+
+    return format;
+  }
+
   const submitBook = (e) => {
     e.preventDefault();
 
@@ -102,6 +127,7 @@ export default function AddBook() {
           <label htmlFor="bookTitle">Título:</label>
           <input
             autoComplete="off"
+            placeholder="Mein Kampf"
             type="text"
             id="bookTitle"
             onChange={(e) => setTitle(e.target.value)}
@@ -111,6 +137,7 @@ export default function AddBook() {
           <label htmlFor="bookAuthor">Autor:</label>
           <input
             autoComplete="off"
+            placeholder="Brando Sando"
             type="text"
             id="bookAuthor"
             onChange={(e) => setAuthor(e.target.value)}
@@ -120,6 +147,7 @@ export default function AddBook() {
           <label htmlFor="bookGenre">Género:</label>
           <input
             autoComplete="off"
+            placeholder="Sci-Fi"
             type="text"
             id="bookGenre"
             onChange={(e) => setGenre(e.target.value)}
@@ -129,15 +157,16 @@ export default function AddBook() {
           <label htmlFor="bookDate">Fecha:</label>
           <input
             autoComplete="off"
-            type="text"
+            type="date"
             id="bookDate"
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => setDate(handleDate(e.target.value, 'dd-MM-yyyy'))}
           />
         </div>
         <div className="form-section">
           <label htmlFor="bookPages">Páginas:</label>
           <input
             className="number-input"
+            placeholder="1250"
             autoComplete="off"
             type="number"
             id="bookPages"
@@ -148,7 +177,7 @@ export default function AddBook() {
           <label htmlFor="bookPages">Puntaje:</label>
           <select onChange={(e) => handleRating(e.target.value)}>
             <option value="none" defaultValue>
-              Seleccione un valor
+              Elegir puntaje
             </option>
             <option value="1">1</option>
             <option value="2">2</option>
