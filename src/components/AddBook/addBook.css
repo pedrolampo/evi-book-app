@@ -54,3 +54,12 @@
 .add-book-screen .number-input[type='number'] {
   -moz-appearance: textfield;
 }
+
+@media screen and (max-width: 1100px) {
+  .add-book-screen {
+    width: 90%;
+  }
+  .add-book-screen form {
+    width: 100%;
+  }
+}

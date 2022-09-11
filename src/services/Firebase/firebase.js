@@ -11,12 +11,12 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDM1Blc_E-xSmbnPlmmkyHHjt3bGHB97Gc',
-  authDomain: 'evi-book-app.firebaseapp.com',
-  projectId: 'evi-book-app',
-  storageBucket: 'evi-book-app.appspot.com',
-  messagingSenderId: '473302861736',
-  appId: '1:473302861736:web:46e6fc5cb5c9118dd43f9d',
+  apiKey: 'AIzaSyAzdUlgahDfzJVxgNNujpQe7d9rxj2sK-Y',
+  authDomain: 'evi-books-app.firebaseapp.com',
+  projectId: 'evi-books-app',
+  storageBucket: 'evi-books-app.appspot.com',
+  messagingSenderId: '669973242177',
+  appId: '1:669973242177:web:5c16211f9d156f71e701c0',
 };
 
 const app = initializeApp(firebaseConfig);
@@ -85,7 +85,7 @@ export const getSingleRecipe = (value) => {
 
 export const getPass = () => {
   return new Promise((res, rej) => {
-    getDoc(doc(db, 'data', 'kTu0nERfmuZ5S0NgoOiV'))
+    getDoc(doc(db, 'data', 'd2WFRpvi1z3fQVgmQX3j'))
       .then((querySnapshot) => {
         res(querySnapshot.data().pass);
       })
